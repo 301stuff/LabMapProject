@@ -27,11 +27,13 @@
 ***
 * Estimate of time needed to complete: ** 2 hour**
 * Start time: ** 7:30 pm**
-* Finish time: ** **
-* Actual time needed to complete: ** **
+* Finish time: 10:30pm
+* Actual time needed to complete: 3 hours
 
-## **Driver:** 
+## **Driver:**  
+Ana
 ## **Navigator:** 
+Morgan
 ***
 
 # Feature #2:
