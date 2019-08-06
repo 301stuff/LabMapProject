@@ -51,7 +51,7 @@ function lookup(options) {
     .catch(error => handleError(error));
 }
 
-// Models
+// Constructor for Location data
 function Location(query, res) {
   this.tableName = 'locations';
   this.search_query = query;
@@ -59,7 +59,7 @@ function Location(query, res) {
   this.latitude = res.body.results[0].geometry.location.lat;
   this.longitude = res.body.results[0].geometry.location.lng;
 }
-
+// looks at the database for location information
 Location.lookupLocation = (location) => {
   const SQL = `SELECT * FROM locations WHERE search_query=$1;`;
   const values = [location.query];
@@ -74,7 +74,7 @@ Location.lookupLocation = (location) => {
     })
     .catch(console.error);
 };
-
+//function that will add the location information to SQL database
 Location.prototype = {
   save: function () {
     const SQL = `INSERT INTO locations (search_query, formatted_query, latitude, longitude) VALUES ($1, $2, $3, $4) ON CONFLICT DO NOTHING RETURNING id;`;
